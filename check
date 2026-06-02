@@ -1,0 +1,30 @@
+#! /usr/bin/env bash
+YELLOW='\033[1;33m'  # 黄色加粗
+GREEN='\033[1;32m'   # 绿色加粗
+CYAN='\033[1;36m'    # 青色加粗
+PURPLE='\033[1;35m'  # 紫色加粗
+NC='\033[0m'         # 恢复默认颜色 (No Color)
+
+echo -e "${YELLOW}=== CPU负载 ===${NC}"
+printf "${YELLOW}"
+uptime
+printf "${NC}\n"
+echo ""
+
+echo -e "${GREEN}=== 内存 ===${NC}"
+printf "${GREEN}"
+free -h
+printf "${NC}\n"
+echo ""
+
+echo -e "${CYAN}=== 磁盘 ===${NC}"
+printf "${CYAN}"
+df -h
+printf "${NC}\n"
+echo ""
+
+echo -e "${PURPLE}=== Docker状态 ===${NC}"
+printf "${PURPLE}"
+docker ps
+printf "${NC}\n"
+echo ""

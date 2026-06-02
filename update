@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+echo "正在启动更新~"
+
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+
+git pull
+
+docker compose down
+
+docker compose up -d --build
+
+echo "更新时间: $(date)" >> updatelog.log
+
+echo "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+
+echo "更新完毕~"
